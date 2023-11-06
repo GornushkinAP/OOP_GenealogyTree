@@ -1,51 +1,44 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.Serializable;
 
-public class Person {
-    private String firstName;
-    private String lastName;
-    private String middleName;
-    private String gender;
-    private int birthYear;
-    private int deathYear;
+
+public class Person implements Serializable{
+    private String name;
+    private Gender gender;
+    private LocalDate birthYear;
+    private LocalDate deathYear;
     private String relationship;
     private List<Person> children;
 
-    public Person(String firstName, String lastName, String middleName, String gender, int birthYear, String relationship) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.middleName = middleName;
+    public Person(String name, Gender gender, LocalDate birthYear, LocalDate deathYear, String relationship) {
+        this.name = name;
         this.gender = gender;
         this.birthYear = birthYear;
+        this.deathYear = deathYear;
         this.relationship = relationship;
         this.children = new ArrayList<>();
     }
+
 
     public void addChildren(Person child) {
         children.add(child);
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public int getBirthYear() {
+    public LocalDate getBirthYear() {
         return birthYear;
     }
 
-    public int getDeathYear() {
+    public LocalDate getDeathYear() {
         return deathYear;
     }
 

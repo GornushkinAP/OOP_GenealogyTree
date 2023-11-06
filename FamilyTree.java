@@ -12,9 +12,9 @@ public class FamilyTree {
         people.add(person);
     }
 
-    public Person getPerson(String firstName, String lastName) {
+    public Person getPerson(String name) {
         for (Person person : people) {
-            if (person.getFirstName().equals(firstName) && person.getLastName().equals(lastName)) {
+            if (person.getName().equals(name)) {
                 return person;
             }
         }
@@ -23,6 +23,10 @@ public class FamilyTree {
 
     public List<Person> getPeople() {
         return people;
+    }
+
+    public void setPeople(List<Person> people) {
+        this.people = people;
     }
 
 }
